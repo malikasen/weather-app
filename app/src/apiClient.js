@@ -1,4 +1,9 @@
 export const getTasks = () => _get("/api/tasks");
+export const getForecasts = async (city) => {
+  console.log("get forecast is called");
+  console.log("city in api client", city);
+  return await _get("/api/my-personal-weather-forecast?city="+city+"&a=b&c=d");
+}
 
 export const addTask = (name) => _post("/api/tasks", { name });
 
